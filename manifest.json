@@ -6,15 +6,21 @@
 
   "description": "Add the ability to generate a QR code for any website for easy sharing",
 
-  // "icons": {
-  //   "48": "icons/dropper-48.png"
-  // },
+  "icons": {
+    "48": "icons/QR_code.png"
+  },
 
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
       "js": ["dropper.js"]
     }
-  ]
+  ],
+
+  "browser_action": {
+    "default_icon": "icons/QR_code.png",
+    "default_title": "Dropper",
+    "default_popup": "popup/popup.html"
+  }
 
 }
