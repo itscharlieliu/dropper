@@ -1,0 +1,20 @@
+{
+
+  "manifest_version": 2,
+  "name": "Dropper",
+  "version": "1.0",
+
+  "description": "Add the ability to generate a QR code for any website for easy sharing",
+
+  // "icons": {
+  //   "48": "icons/dropper-48.png"
+  // },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["dropper.js"]
+    }
+  ]
+
+}
