@@ -1,3 +1,10 @@
+var QRCode = require('qrcode')
 
-document.body.style.border = "5px solid red"
-console.log(window.location.href)
+const canvas = document.getElementById('canvas')
+
+browser.tabs.query({currentWindow: true, active: true})
+    .then((tabs) => {
+      console.log(tabs[0].url);
+  })
+
+QRCode.toCanvas(canvas, window.location.href)
