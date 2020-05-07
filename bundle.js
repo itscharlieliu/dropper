@@ -2020,16 +2020,14 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
 }
 
 },{}],4:[function(require,module,exports){
-var QRCode = require('qrcode')
+const QRCode = require('qrcode')
 
 const canvas = document.getElementById('canvas')
 
 browser.tabs.query({currentWindow: true, active: true})
     .then((tabs) => {
-      console.log(tabs[0].url);
-  })
-
-QRCode.toCanvas(canvas, window.location.href)
+      QRCode.toCanvas(canvas, tabs[0].url)
+  });
 },{"qrcode":7}],5:[function(require,module,exports){
 'use strict';
 
