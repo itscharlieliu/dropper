@@ -2,7 +2,6 @@ const QRCode = require('qrcode')
 
 const canvas = document.getElementById('canvas')
 
-browser.tabs.query({currentWindow: true, active: true})
-    .then((tabs) => {
+chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
       QRCode.toCanvas(canvas, tabs[0].url)
-  });
+});
